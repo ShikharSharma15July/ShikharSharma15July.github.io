@@ -1,5 +1,14 @@
 <html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	var first = Math.round(Math.random()*10));
+	$("#firstNumber).innerHTML = first;
+});
+</script>
+</head>
 <body>
-1 + 1 = 2
+<span id="firstNumber">1</span> <span id="operationType">+</span> <span id="secondNumber">2</span> = <input type="text"/>
 </body>
 </html>
