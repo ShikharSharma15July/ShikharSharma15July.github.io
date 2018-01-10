@@ -3,12 +3,66 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	var first = Math.round(Math.random()*10));
-	$("#firstNumber).innerHTML = first;
+	var first = Math.round(Math.random()*10);
+	var second = Math.round(Math.random()*10);
+	var result;
+	
+	$("#firstNumber").html(first);
+	$("#secondNumber").html(second);
+	
+	var operation = Math.round(Math.random()*10);
+	if(operation > 7) {
+		$("#operationType").html("+");
+		result = first + second;
+	}
+	else if(operation > 4) {
+		$("#operationType").html("x");
+		result = first * second;
+	}
+	else {
+		$("#operationType").html("-");
+		if(first < second) {
+			$("#firstNumber").html(second);
+			$("#secondNumber").html(first);
+			result = second - first;
+		}
+		else {
+			result = first - second;
+		}
+	}
+	
+	// COLORS
+	var colors = ["#E9AB17", "#A52A2A", "#8A2BE2", "#9932CC", "	#FF00FF", "#DAA520", "#ADFF2F", "#778899", "#FF6347", "#008080", "#D2B48C"];	
+	$("#firstNumber").css("color", colors[Math.round(Math.random()*10)]);
+	$("#operationType").css("color", colors[Math.round(Math.random()*10)]);
+	$("#secondNumber").css("color", colors[Math.round(Math.random()*10)]);
+	$("#equal").css("color", colors[Math.round(Math.random()*10)]);
+	
+	$("#right").hide();
+	$("#rightImg").hide();
+	$("#f5").hide();
+	
+	$("#result").focus();
+	
+	$('#result').on('keyup', function() {
+     if($("#result").val() == result) {
+		$("#right").show();
+		$("#rightImg").show();
+		$("#f5").show();
+	 }
+	 else {
+		$("#right").hide();
+		$("#rightImg").hide();
+		$("#f5").hide();
+	 }
+	});
 });
 </script>
 </head>
-<body>
-<span id="firstNumber">1</span> <span id="operationType">+</span> <span id="secondNumber">2</span> = <input type="text"/>
+<body style="font-size:300px;">
+<span id="firstNumber">1</span> <span id="operationType">+</span> <span id="secondNumber">2</span> <span id="equal">=</span> <input id="result" style="font-size:250px;width:350px;" type="text"/><br/>
+<span id="right" style="font-size:50px;color:#A0522D;">You are right...</span>
+<img id="rightImg" src="http://www.animatedimages.org/data/media/563/animated-balloon-image-0046.gif"/>
+<span id="f5" style="font-size:50px;color:#A0522D;">...now press F5</span>
 </body>
 </html>
