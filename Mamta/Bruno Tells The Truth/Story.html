@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Bruno Tells The Truth</title>
+    <style>
+        .button {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 10px;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            margin:10px
+        }
+    
+        .small-btn {
+            width: 50px;
+            height: 25px;
+        }
+    
+        .medium-btn {
+            width: 70px;
+            height: 30px;
+        }
+    
+        .big-btn {
+            width: 90px;
+            height: 40px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+
+</head>
+<body>
+<table>
+    <tr style="height: 100%; width: 100%">
+        <td  align="right"><img id="one" src="0.jpg" style="width: 90%;"/></td>
+        <td><img id="two" src="1.jpg" style="width: 90%" /></td>
+    </tr>
+</table>
+<table align="center">
+    <tr>
+        <td style="margin: 5px; padding: 5px"><button id="previous" class="button big-btn">Previous</button></td>
+        <td style="margin: 5px; padding: 5px"><button id="next" class="button big-btn">Next</button></td>
+    </tr>
+</table>
+</body>
+<script>
+    $(document).ready(function () {
+        var count = 0;
+        $("#previous").click(function () {
+            if (count > 0) {
+                count = count - 2;
+                $('#one').attr("src", count + ".jpg");
+                $('#two').attr("src", (count + 1) + ".jpg");
+            }
+        });
+        $("#next").click(function () {
+            if (count < 26) {
+                count = count + 2;
+                $('#one').attr("src", count + ".jpg");
+                $('#two').attr("src", (count + 1) + ".jpg");
+            }
+        });
+    });
+</script>
+</html>
