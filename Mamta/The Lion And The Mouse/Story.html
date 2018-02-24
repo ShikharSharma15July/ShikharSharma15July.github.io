@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>Bruno Tells The Truth</title>
+    <style>
+        .button {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 10px;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            margin:10px
+        }
+    
+        .small-btn {
+            width: 50px;
+            height: 25px;
+        }
+    
+        .medium-btn {
+            width: 70px;
+            height: 30px;
+        }
+    
+        .big-btn {
+            width: 90px;
+            height: 40px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+
+</head>
+<body>
+<table>
+    <tr>
+        <td align="center"><img id="one" src="1.jpg" style="width: 80%;"/></td>
+    </tr>
+</table>
+<table align="center">
+    <tr>
+        <td style="margin: 5px; padding: 5px"><button id="previous" class="button big-btn">Previous</button></td>
+        <td style="margin: 5px; padding: 5px"><button id="next" class="button big-btn">Next</button></td>
+    </tr>
+	<tr>
+		<td align="center" colspan="2"><input id="showDialogs" type="checkbox" >Show Dialogs<br></td>
+	</tr>
+</table>
+</body>
+<script>
+    $(document).ready(function () {
+		var img = $('#one');
+		$(document).keydown(
+		function(e)
+		{
+			if (e.keyCode == 39) {      
+				$("#next").click();
+			}
+			if (e.keyCode == 37) {      
+				$("#previous").click();
+
+			}
+		});
+        var count = 1;
+		var path = "";
+		$('#showDialogs')[0].checked = true;
+		$('#showDialogs').change(function() {		
+			if (!this.checked) {
+				path= "org/";
+			}
+			else
+			{
+				path = "";
+			}
+			img.attr("src", path + count + ".jpg");
+		});
+
+        $("#previous").click(function () {
+            if (count > 1) {
+                count = count - 1;
+                img.attr("src", path + count + ".jpg");
+            }
+        });
+        $("#next").click(function () {
+            if (count < 12) {
+                count = count + 1;
+                img.attr("src", path + count + ".jpg");
+            }
+        });
+    });
+</script>
+</html>
