@@ -47,20 +47,20 @@
 </body>
 <script>
 
+    $(document).ready(function () {
+		
+
 		var image0Light = document.images[0];
 		var image1Light = document.images[1];
 		
 		var image0Big = document.createElement("img");
 		var image1Big = document.createElement("img");
 		
-		image0Big.onload = function() { image0Light.src = this.scr; }
+		image0Big.onload = function() { image0Light.src = this.src; }
 		image1Big.onload = funcction() { image1Light.src = this.src; }
 		
 		image0Big.src = "0.jpg";
-		image1Big.src = "1.jpg";
-    $(document).ready(function () {
-		
-		
+		image1Big.src = "1.jpg";		
 	
 		$(document).keydown(
 		function(e)
