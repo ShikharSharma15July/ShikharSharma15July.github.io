@@ -46,8 +46,7 @@
 </table>
 </body>
 <script>
-    $(document).ready(function () {
-		
+
 		var image0Light = document.images[0];
 		var image1Light = document.images[1];
 		
@@ -56,6 +55,9 @@
 		
 		image0Big.onLoad = function() { image0Light.src = this.scr; }
 		image1Big.onLoad = funcction() { image1Light.src = this.src; }
+		
+    $(document).ready(function () {
+		
 		
 		image0Big.src = "0.jpg";
 		image1Big.src = "1.jpg";
