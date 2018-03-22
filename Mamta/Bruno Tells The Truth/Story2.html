@@ -56,6 +56,27 @@
 		var image0Big = document.createElement("img");
 		var image1Big = document.createElement("img");
 		
+		var image2Big = document.createElement("img");
+		var image3Big = document.createElement("img");
+		
+		var image4Big = document.createElement("img");
+		var image5Big = document.createElement("img");
+		
+		var image6Big = document.createElement("img");
+		var image7Big = document.createElement("img");
+		
+		var image8Big = document.createElement("img");
+		var image9Big = document.createElement("img");
+		
+		var image10Big = document.createElement("img");
+		var image11Big = document.createElement("img");
+		
+		var image12Big = document.createElement("img");
+		var image13Big = document.createElement("img");
+		
+		var image14Big = document.createElement("img");
+		var image15Big = document.createElement("img");
+		
 		image0Big.onload = function() { image0Light.src = this.src; }
 		image1Big.onload = function() { image1Light.src = this.src; }
 		
@@ -84,8 +105,16 @@
         $("#next").click(function () {
             if (count < 26) {
                 count = count + 2;
-                $('#one').attr("src", count + ".jpg");
-                $('#two').attr("src", (count + 1) + ".jpg");
+                if(count == 2)
+				{
+					image0Light.src = image2Big.src;
+					image1Light.src = image3Big.src;
+				}
+				else
+				{
+					$('#one').attr("src", count + ".jpg");
+					$('#two').attr("src", (count + 1) + ".jpg");				
+				}
             }
         });
     });
