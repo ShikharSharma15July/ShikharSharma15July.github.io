@@ -81,7 +81,16 @@
 		image1Big.onload = function() { image1Light.src = this.src; }
 		
 		image0Big.src = "0.jpg";
-		image1Big.src = "1.jpg";		
+		image1Big.src = "1.jpg";
+
+		image2Big.src = "2.jpg";
+		image3Big.src = "3.jpg";
+
+		image4Big.src = "4.jpg";
+		image5Big.src = "5.jpg";
+
+		image6Big.src = "6.jpg";
+		image7Big.src = "7.jpg";		
 	
 		$(document).keydown(
 		function(e)
@@ -109,6 +118,16 @@
 				{
 					image0Light.src = image2Big.src;
 					image1Light.src = image3Big.src;
+				}
+				if(count == 4)
+				{
+					image0Light.src = image4Big.src;
+					image1Light.src = image5Big.src;
+				}
+				if(count == 6)
+				{
+					image0Light.src = image6Big.src;
+					image1Light.src = image7Big.src;
 				}
 				else
 				{
