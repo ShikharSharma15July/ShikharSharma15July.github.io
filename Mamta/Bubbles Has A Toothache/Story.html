@@ -1,41 +1,18 @@
 <html>
 <head>
     <title>Bruno Tells The Truth</title>
-    <style>
-        .button {
-            background-color: #000000;
-            color: #FFFFFF;
-            padding: 10px;
-            border-radius: 10px;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            margin:10px
-        }
-    
-        .small-btn {
-            width: 50px;
-            height: 25px;
-        }
-    
-        .medium-btn {
-            width: 70px;
-            height: 30px;
-        }
-    
-        .big-btn {
-            width: 90px;
-            height: 40px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../JSnCSS/story.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-
+    <script src="../JSnCSS/story.js"></script>
+    <script>
+        var totalImages = 25;
+    </script>
 </head>
 <body>
 <table>
     <tr style="height: 100%; width: 100%">
-        <td  align="right"><img id="one" src="0.jpg" style="width: 90%;"/></td>
-        <td><img id="two" src="1.jpg" style="width: 90%; padding-top: 50px;" /></td>
+        <td align="right"><img src="0Light.jpg" style="width: 90%;"/></td>
+        <td><img src="1Light.jpg" style="width: 90%" /></td>
     </tr>
 </table>
 <table align="center">
@@ -45,82 +22,4 @@
     </tr>
 </table>
 </body>
-<script>
-    $(document).ready(function () {
-		$(document).keydown(
-		function(e)
-		{
-			if (e.keyCode == 39) {      
-				$("#next").click();
-			}
-			if (e.keyCode == 37) {      
-				$("#previous").click();
-
-			}
-		});
-        var count = 0;
-		function Fit(number)
-		{
-			var one = $('#one'); one.css("width", "90%");
-			var two = $('#two'); two.show();
-			one.css("padding-top", "0px");
-			two.css("padding-top", "0px");
-			one.attr("src", count + ".jpg");
-            two.attr("src", (count + 1) + ".jpg");
-			if(count == 0)
-			{
-				two.css("padding-top", "50px");
-			}
-			else if(count == 2)
-			{
-				one.css("padding-top", "240px");
-			}
-			else if(count == 4)
-			{
-				two.css("padding-top", "20px");
-			}
-			else if(count == 6)
-			{
-				$('#two').css("padding-top", "50px");
-			}
-			else if(count == 12)
-			{
-				two.css("padding-top", "20px");
-			}
-			else if(count == 14)
-			{
-				two.css("padding-top", "100px");
-			}
-			else if(count == 16)
-			{
-				one.css("padding-top", "20px");
-			}
-			else if(count == 18)
-			{
-				one.css("padding-top", "30px");
-			}
-			else if(count == 20)
-			{
-				one.css("padding-top", "30px");
-			}
-			else if(count == 24)
-			{
-				one.css("width", "65%");
-				two.hide();
-			}
-		}
-        $("#previous").click(function () {
-            if (count > 0) {				
-                count = count - 2;
-				Fit(count);                
-            }
-        });
-        $("#next").click(function () {
-            if (count < 24) {
-                count = count + 2;
-				Fit(count);				
-            }
-        });
-    });
-</script>
 </html>
