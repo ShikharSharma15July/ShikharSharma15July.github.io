@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="canvasStyle.css" />	
+	</head>
+	<body>
+		<table style="width:100%; height:100%">
+			<tr>
+				<td style="width:120px; height:100%;">
+					<h3 style="background-color: yellow; padding:5px; margin:5px; color: red; text-align:center;"><u>Colors</u></h3>
+					<div id="colors">
+						<table>
+							<tr>
+								<td><button id="black" onclick="changeColor('black')"></button></td>
+								<td><button id="white" onclick="changeColor('white')"></button></td>
+							</tr>
+							<tr>
+								<td><button id="red" onclick="changeColor('red')"></button></td>
+								<td><button id="yellow" onclick="changeColor('yellow')"></button></td>
+							</tr>
+							<tr>
+								<td><button id="green" onclick="changeColor('green')"></button></td>
+								<td><button id="blue" onclick="changeColor('blue')"></button></button></td>
+							</tr>
+						</table>						
+					</div>
+					<br>
+					&nbsp;&nbsp;<button id="clearCanvas" style="align:center;" onclick="clearCanvas()">Clear<br>All</button>
+					<br><br>
+					<h3 style="background-color: yellow; padding:5px; margin:5px; color: red; text-align:center;"><u>Brush Size</u></h3>
+				    <div id="otherTools">
+				        <table>
+				            <tr>
+				                <td><button id="brushSize1" onclick="changeBrushSize(5)">1</button></td>
+				                <td><button id="brushSize2" onclick="changeBrushSize(20)">2</button></td>
+				            </tr>
+				            <tr>
+				                <td><button id="brushSize3" onclick="changeBrushSize(30)">3</button></td>
+				                <td><button id="brushSize4" onclick="changeBrushSize(40)">4</button></td>
+				            </tr>
+				        </table>						
+				    </div>
+				    <br />
+				    <button id="previous" style="height: 25px; width: 100px;" class="button big-btn" onclick="previous()"><b>&lt;&lt;</b></button>
+				    <br />
+					<br />
+					Page No.:<span style="border: 1px solid black; padding:5px; margin: 5px;" id="pageNumber">1</span>
+					<br />
+					<br />
+				    <button id="next" style="height: 25px; width: 100px;" class="button big-btn" onclick="next()"><b>&gt;&gt;</b></button>
+				</td>
+				<td style="height:100%;">
+					<canvas style="border: 1px solid black;" id="canvas" width="1550" height="1980"></canvas>
+				</td>
+			</tr>
+		</table>
+		<input type="text" id="x"></input>
+		<input type="text" id="y"></input>
+		<input type="text" id="now"></input>
+		<script src="canvasJS.js"></script>
+	</body>
+</html>
